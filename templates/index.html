@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>PasteBin</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center; font-weight: bolder;">PasteBin</h1>
+    <h4 style="text-align: center">Give a title, Add your snippet/text and Get your link!</h4>
+    <div class="form d-flex my-5" style="align-items: center;justify-content: center;">
+        <form action="/" method="POST">
+            <label for="title" class="form-label fs-5" style="font-weight: 500;">Title:</label><br/>
+            <input type="text" name="title" id="title"><br/>
+            <label for="content" class="form-label fs-5" style="font-weight: 500;">Snippet/Text:</label><br/>
+            <input type="text" name="content" id="content"><br/><br/>
+            <input type="submit" value="Get Link!">
+        </form>
+    </div>
+</div>
+<div class="content">
+    <h4 style="text-align: center">Your Generated link is:-</h4>
+    <h4 style="text-align: center">{{tiny_url}}</h4>
+</div>
+{% endblock %}
