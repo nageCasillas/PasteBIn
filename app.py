@@ -57,7 +57,7 @@ def index():
             db.session.add(new_task)
             db.session.commit()
             print(new_task.id)
-            local_url = "http://localhost:5000/fetchdata/"+str(new_task.id)
+            local_url = "https://paste-bin-nage.herokuapp.com/fetchdata/"+str(new_task.id)
             # print(local_url)
             tiny_url = url_shortener.tinyurl.short(local_url)
             return render_template('index.html', tiny_url=tiny_url)
